@@ -1,13 +1,47 @@
-{{!
-Це код container файлу для index сторінки,
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
-}}
+<form class="form" id="form">
+	<img src="https://picsum.photos/1200/1200" alt="Form image" class="form__image" height="160px" width="100%">
+	<h1 class="form__title">User registration</h1>
 
-<main>
-	{{>heading title="Index" info=data.test}}
-</main>
+	<div class="form__group">
+		<label for="username" class="form__label">User name</label>
+		<input type="text" id="username" name="username" class="form__input" required>
+		<span class="form__button-save">Save</span>
+	</div>
 
-{{!
-    Цей код містить лише те, що буде виводитись в <body>
-    Адже наш layout/default.hbs має вже структуру HTML
-}}
+	<div class="form__group">
+		<label for="email" class="form__label">Email</label>
+		<input type="email" id="email" name="email" class="form__input" required>
+	</div>
+
+	<div class="form__group">
+		<label for="age" class="form__label">Age</label>
+		<input type="number" id="age" name="age" class="form__input" required>
+		<span class="form__button-add" operator="+" value="10">+10</span>
+		<span class="form__button-add" operator="-" value="10">-10</span>
+	</div>
+
+	<div class="form__group">
+		<label for="role" class="form__label">Choose role</label>
+		<select name="role" id="role" class="form__select" required>
+			<option value="" disabled="" selected="">Role</option>
+			<option value="user">User</option>
+			<option value="admin">Admin</option>
+		</select>
+	</div>
+
+	<div class="form__group form__group--checkbox">
+		<label for="agree" class="form__label">Send notifications to email</label>
+		<input type="checkbox" id="agree" name="agree" class="form__input" required>
+	</div>
+	<button class="form__button" type="submit">
+		<span>Sign up</span>
+	</button>
+
+
+	<div id="outer">
+		<div id="inner">
+			Click me!
+		</div>
+	</div>
+
+</form>
